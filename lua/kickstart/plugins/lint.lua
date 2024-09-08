@@ -5,8 +5,15 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
+      vim.api.nvim_crate_autocmd({ 'BufWritePost' }, {
+        callback = function()
+          lint.try_lint()
+        end,
+      })
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        javascript = { 'eslint' },
+        typescript = { 'eslint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

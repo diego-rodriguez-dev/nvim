@@ -18,7 +18,38 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+      {
+        'williamboman/mason.nvim',
+        config = true,
+        opts = {
+          ensure_installed = {
+            'pydantic',
+            'eslint-lsp',
+            'prettierd',
+            'typescript-language-server',
+            'js-debug-adapter',
+            'lua-language-server',
+            'pyright',
+            'isort',
+            'css-lsp',
+            'json-lsp',
+            'html-lsp',
+            'marksman',
+            'black',
+            'mypy',
+            'ruff',
+            'angular-language-server@16',
+            'terraform-ls',
+            'stylua',
+            'docker-compose-language-service',
+            'dockerfile-language-server',
+            'bash-language-server',
+            'markdownlint',
+            'actionlint',
+            'hadolint',
+          },
+        },
+      }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -166,6 +197,7 @@ return {
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      local util = require 'lspconfig.util'
       local servers = {
         -- clangd = {},
         -- gopls = {},
@@ -179,7 +211,26 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-
+        pyright = {
+          fileTypes = { 'python' },
+        },
+        terraformls = {},
+        cssls = {},
+        marksman = {},
+        jsonls = {},
+        bashls = {},
+        dockerls = {},
+        docker_compose_language_service = {},
+        angularls = {
+          root_dir = util.root_pattern('angular.json', 'nx.json'),
+        },
+        ts_ls = {
+          filetypes = {
+            'javascript',
+            'typescript',
+          },
+        },
+        eslint = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
