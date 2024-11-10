@@ -71,7 +71,6 @@ vim.opt.relativenumber = true
 -- vim.opt.softtabstop = 4
 -- vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
@@ -86,4 +85,5 @@ vim.opt.isfname:append '@-@'
 
 vim.opt.updatetime = 300
 vim.opt.swapfile = false
+vim.opt.writebackup = false
 -- vim.opt.cmdheight = 0
