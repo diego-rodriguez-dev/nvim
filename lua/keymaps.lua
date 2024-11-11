@@ -86,3 +86,8 @@ vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>')
 vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<CR>')
 vim.keymap.set('n', '<leader>dd', '<cmd>DapDisconnect<CR>')
 vim.keymap.set('n', '<leader>de', '<cmd>lua require("dapui").eval()<CR>')
+
+--- JESTER
+vim.keymap.set('n', '<leader>jr', '<cmd>lua run_test()<CR>')
+vim.keymap.set('n', '<leader>jd', '<cmd>lua debug_test()<CR>')
+vim.keymap.set('n', '<leader>ja', '<cmd>lua run_file()<CR>')
