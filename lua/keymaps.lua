@@ -80,3 +80,9 @@ vim.keymap.set('n', '<leader><leader>', function()
 end)
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
+
+--- DAP Keymaps
+vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>')
+vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<CR>')
+vim.keymap.set('n', '<leader>dd', '<cmd>DapDisconnect<CR>')
+vim.keymap.set('n', '<leader>de', '<cmd>lua require("dapui").eval()<CR>')

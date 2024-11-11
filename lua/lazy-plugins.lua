@@ -56,6 +56,14 @@ require('lazy').setup({
   require 'kickstart/plugins/formatter',
 
   require 'kickstart/plugins/lazy-git',
+
+  require 'kickstart/plugins/dap-ui',
+
+  require 'kickstart/plugins/dap',
+
+  require 'kickstart/plugins/dap-virtual-text',
+
+  require 'kickstart/plugins/cmp-dap',
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
