@@ -1,5 +1,3 @@
--- Define the function in Lua
-
 local function find_file_in_parents(start_dir, target_file)
   -- Set the starting directory or use the current file's directory by default
   local dir = start_dir or vim.fn.expand '%:p:h'
