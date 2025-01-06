@@ -198,6 +198,14 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local util = require 'lspconfig.util'
+      require('java').setup {
+        jdtls = {
+          version = 'v1.43.0',
+        },
+        jdk = {
+          auto_install = false,
+        },
+      }
       local servers = {
         -- clangd = {},
         -- gopls = {},
@@ -211,6 +219,7 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        jdtls = {},
         pyright = {
           fileTypes = { 'python' },
         },
@@ -245,6 +254,7 @@ return {
             },
           },
         },
+        ltex = {},
       }
 
       -- Ensure the servers and tools above are installed

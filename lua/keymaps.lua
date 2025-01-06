@@ -91,3 +91,10 @@ vim.keymap.set('n', '<leader>de', '<cmd>lua require("dapui").eval()<CR>')
 vim.keymap.set('n', '<leader>jr', '<cmd>lua run_test()<CR>')
 vim.keymap.set('n', '<leader>jd', '<cmd>lua debug_test()<CR>')
 vim.keymap.set('n', '<leader>ja', '<cmd>lua run_file()<CR>')
+
+--- JAVA
+vim.keymap.set('n', '<leader>mv', '<cmd>lua BuildMavenProject()<CR>')
+
+--Fine CMD
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '/', '<cmd>SearchBoxIncSearch<CR>', { noremap = true })
